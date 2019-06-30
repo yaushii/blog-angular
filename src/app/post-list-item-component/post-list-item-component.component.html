@@ -1,0 +1,12 @@
+<!-- permet d'afficher 1 commentaire avec sa date de creation sont itre son contenue
+et les boutton like et dislike -->
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': postLoveIts > 0,
+'list-group-item-danger': postLoveIts < 0
+}">
+<h1>{{ getPostTitle() }}</h1>
+<p>Créé le : {{ postCreatedAt |  date: 'd/M/yy H:mm ' }} </p>
+<p> {{ getPostContent() }}</p>
+<button class="btn btn-success" (click)=addLove()>Like</button>
+<button class="btn btn-danger" (click)=removeLove()>Dislike</button>
+</li>
